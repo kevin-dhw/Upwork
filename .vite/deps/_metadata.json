@@ -1,0 +1,53 @@
+{
+  "hash": "08c2df0a",
+  "browserHash": "ead771b7",
+  "optimized": {
+    "react-dom/client": {
+      "src": "../../../Upwork/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "7ab06a26",
+      "needsInterop": true
+    },
+    "click-to-react-component": {
+      "src": "../../../Upwork/node_modules/click-to-react-component/src/index.js",
+      "file": "click-to-react-component.js",
+      "fileHash": "96a28103",
+      "needsInterop": false
+    },
+    "react-dnd": {
+      "src": "../../../Upwork/node_modules/react-dnd/dist/index.js",
+      "file": "react-dnd.js",
+      "fileHash": "714623bd",
+      "needsInterop": false
+    },
+    "react-dnd-html5-backend": {
+      "src": "../../../Upwork/node_modules/react-dnd-html5-backend/dist/index.js",
+      "file": "react-dnd-html5-backend.js",
+      "fileHash": "d36dba0c",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../../Upwork/node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "34ec9c5e",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../../Upwork/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b53f84e7",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-23SWSJY7": {
+      "file": "chunk-23SWSJY7.js"
+    },
+    "chunk-225ZONPY": {
+      "file": "chunk-225ZONPY.js"
+    },
+    "chunk-5WWUZCGV": {
+      "file": "chunk-5WWUZCGV.js"
+    }
+  }
+}
