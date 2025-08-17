@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       <div className=" font-bold text-[20px]">upwork</div>
       <div className=" flex-1 flex pl-[50px]">
         {tabData.map((item, index) => {
-          return <TabItem key={index} item={item}></TabItem>;
+          return <TabItem key={index} title={index} item={item}></TabItem>;
         })}
       </div>
       <div className=" ">

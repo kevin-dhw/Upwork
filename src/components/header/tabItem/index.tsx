@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Item } from "../../../store/home/header";
 
 export interface TabItemProps {
-  title?: string;
+  title?: string | number;
   item?: Item;
 }
 
@@ -24,7 +24,9 @@ const TabItem: React.FC<TabItemProps> = (props) => {
         onMouseLeave={handleLeave}
         className={classNames(" cursor-pointer", hover && " text-[#14a800]")}
       >
-        <div className=" cursor-pointer">{title}</div>
+        <div className=" cursor-pointer">
+          {title === 0 ? "Find work" : "Deliver work"}
+        </div>
       </div>
       {hover && (
         <div
