@@ -1,9 +1,26 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+  forwardRef,
+  ForwardRefRenderFunction,
+  useImperativeHandle,
+} from "react";
 
-const Search = () => {
+export interface SearchProps {
+  getVal: (val: string) => void;
+}
+
+export interface SearchRef {
+  getSearchVal: () => string;
+}
+
+const InnerSearch: ForwardRefRenderFunction<SearchRef, SearchProps> = (
+  props,
+  ref
+) => {
+  const { getVal } = props;
   const [searchVal, setSearchVal] = useState("");
   const [blurShow, setBlurShow] = useState(false);
-  const [searchList, setSearchList] = useState([
+  const [searchList] = useState([
     {
       title: "123",
     },
@@ -18,6 +35,13 @@ const Search = () => {
   const handleFocus = () => {
     setBlurShow(true);
   };
+  const getSearchVal = () => {
+    return searchVal;
+  };
+
+  useImperativeHandle(ref, () => {
+    return { getSearchVal };
+  });
 
   return (
     <div className=" relative">
@@ -27,7 +51,7 @@ const Search = () => {
           onBlur={() => {
             setTimeout(() => {
               setBlurShow(false);
-            }, 100);
+            }, 200);
           }}
           onFocus={handleFocus}
           aria-label="Search"
@@ -51,12 +75,12 @@ const Search = () => {
         </div>
       </div>
       {blurShow && (
-        <div className=" border rounded-md mt-[3px] py-[5px] absolute top-[40px] w-[100%]">
+        <div className=" border rounded-md mt-[3px] py-[5px] absolute top-[40px] w-[100%] bg-white">
           {searchList.map((item, idx) => {
             return (
               <div
                 onClick={() => {
-                  console.log(item.title, "title");
+                  getVal(item.title);
                   setSearchVal(item.title);
                 }}
                 key={idx}
@@ -68,24 +92,8 @@ const Search = () => {
           })}
         </div>
       )}
-      {/* <div className=" border rounded-md mt-[3px] py-[5px] absolute top-[40px] w-[100%]">
-        {searchList.map((item, idx) => {
-          return (
-            <div
-              onClick={() => {
-                console.log(item.title, "title");
-                setSearchVal(item.title);
-              }}
-              key={idx}
-              className=" pl-[20px] py-[5px] hover:bg-gray-200 cursor-pointer"
-            >
-              {item.title}
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 };
-
+const Search = forwardRef(InnerSearch);
 export default Search;
