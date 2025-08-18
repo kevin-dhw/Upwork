@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Search, { SearchRef } from "./components/search";
 // import classNames from "classnames";
 import Avatar from "./components/avatar";
-import CloseComp from "./components/closeComp";
+import CloseComp from "../../components/closeComp";
 import Availability, { AvailabilityRef } from "./components/availability";
 import Boost, { BoostRef } from "./components/boost";
 
