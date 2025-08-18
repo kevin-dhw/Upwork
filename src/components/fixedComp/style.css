@@ -1,0 +1,18 @@
+/* 定义动画 */
+@keyframes slideInFromRight {
+    from {
+      transform: translateY(50%);
+      opacity: 0;
+      scale: 0.8;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  /* 应用动画 */
+  .animate-slide-in {
+    animation: slideInFromRight 0.5s ease forwards;
+  }

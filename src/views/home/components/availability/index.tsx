@@ -6,6 +6,7 @@ import {
   MouseEvent,
 } from "react";
 import FixedComp from "../../../../components/fixedComp";
+import classNames from "classnames";
 
 export interface AvailabilityProps {}
 export interface AvailabilityRef {
@@ -38,7 +39,10 @@ const InnerAvailability: ForwardRefRenderFunction<
               e.stopPropagation();
               console.log("Availability content");
             }}
-            className=" w-[100px] h-[100px] bg-red-200"
+            className={classNames(
+              " w-[100px] h-[100px] bg-red-200",
+              " transition-all ease-in-out duration-500 delay-100 hover:scale-110"
+            )}
           >
             Availability
           </div>

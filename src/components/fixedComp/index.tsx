@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react";
+import "./style.css";
 
 export interface FixedCompProps extends PropsWithChildren {
   close?: () => void;
@@ -14,7 +15,7 @@ const FixedComp: React.FC<FixedCompProps> = (props) => {
       }}
       className=" fixed top-0 bottom-0 right-0 left-0 bg-gray-200 opacity-70 flex"
     >
-      <div className=" m-auto">{children}</div>
+      <div className=" animate-slide-in m-auto ">{children}</div>
     </div>
   );
 };
