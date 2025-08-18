@@ -39,10 +39,7 @@ const InnerAvailability: ForwardRefRenderFunction<
               e.stopPropagation();
               console.log("Availability content");
             }}
-            className={classNames(
-              " w-[100px] h-[100px] bg-red-200",
-              " transition-all ease-in-out duration-500 delay-100 hover:scale-110"
-            )}
+            className={classNames(" w-[500px] h-[500px] bg-red-200")}
           >
             Availability
           </div>

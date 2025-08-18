@@ -13,7 +13,7 @@ const FixedComp: React.FC<FixedCompProps> = (props) => {
       onClick={() => {
         close?.();
       }}
-      className=" fixed top-0 bottom-0 right-0 left-0 bg-gray-200 opacity-70 flex"
+      className=" fixed top-0 bottom-0 right-0 left-0 bg-gray-200 bg-opacity-70 flex"
     >
       <div className=" animate-slide-in m-auto ">{children}</div>
     </div>
