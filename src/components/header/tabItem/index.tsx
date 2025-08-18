@@ -34,7 +34,7 @@ const TabItem: React.FC<TabItemProps> = (props) => {
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
         >
-          <div className=" mt-[40px] w-[300px] border rounded-lg shadow-[1px_1px_10px_1px_#d9d9d9] py-[10px]">
+          <div className=" mt-[40px] w-[300px] border bg-white rounded-lg shadow-[1px_1px_10px_1px_#d9d9d9] py-[10px]">
             {/* border-b */}
             <div className="  pb-[5px]">
               {/* <div className=" pl-[10px]">title</div> */}
