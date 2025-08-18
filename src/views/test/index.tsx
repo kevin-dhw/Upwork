@@ -1,11 +1,9 @@
 import React from "react";
 
-import "./style.css";
-
 const Test: React.FC = () => {
   return (
-    <div className=" h-screen w-screen flex">
-      <div>test</div>
+    <div className=" flex items-center rounded-md border hover:border-black">
+      <div>Test</div>
     </div>
   );
 };
