@@ -33,7 +33,7 @@ const InnerAvailability: ForwardRefRenderFunction<
   if (show) {
     return (
       <div>
-        <FixedComp close={close}>
+        <FixedComp close={close} show={show}>
           <div
             onClick={(e: MouseEvent<HTMLDivElement>) => {
               e.stopPropagation();
