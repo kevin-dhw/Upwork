@@ -1,5 +1,9 @@
 import React, { useState, PropsWithChildren, useRef, useEffect } from "react";
 import classNames from "classnames";
+// import BottomArrow from "@/src/assets/bottomArrow.jpg";
+// import TopArrow from "@/src/assets/topArrow.jpeg";
+import BottomArrow from "../../../../../assets/bottomArrow.jpg";
+import TopArrow from "../../../../../assets/topArrow.jpeg";
 
 export interface CloseCompProps extends PropsWithChildren {
   title?: string;
@@ -34,7 +38,21 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
               setShowContent(!showContent);
             }}
           >
-            {showContent ? "下" : "上"}
+            {showContent ? (
+              <img
+                style={{ marginTop: "10px" }}
+                width={20}
+                height={14}
+                src={BottomArrow}
+              ></img>
+            ) : (
+              <img
+                style={{ marginTop: "10px" }}
+                width={20}
+                height={14}
+                src={TopArrow}
+              ></img>
+            )}
           </div>
         </div>
         <div

@@ -1,5 +1,7 @@
 import React, { useState, PropsWithChildren, useRef, useEffect } from "react";
 import classNames from "classnames";
+import BottomArrow from "../../assets/bottomArrow.jpg";
+import TopArrow from "../../assets/topArrow.jpeg";
 
 export interface CloseCompProps extends PropsWithChildren {
   title?: string;
@@ -20,7 +22,7 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
   return (
     <div>
       <div className=" p-[20px] bg-[#f9f9f9] rounded-md">
-        <div className=" flex">
+        <div className=" flex items-center">
           <div className=" flex-1 font-bold text-[18px]">{title}</div>
           <div
             className=" cursor-pointer"
@@ -28,7 +30,21 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
               setShowContent(!showContent);
             }}
           >
-            {showContent ? "下" : "上"}
+            {showContent ? (
+              <img
+                style={{ marginTop: "2px" }}
+                width={20}
+                height={14}
+                src={BottomArrow}
+              ></img>
+            ) : (
+              <img
+                style={{ marginTop: "2px" }}
+                width={20}
+                height={14}
+                src={TopArrow}
+              ></img>
+            )}
           </div>
         </div>
         <div

@@ -9,17 +9,22 @@ export interface Item {
   list: ListItem[];
 }
 
-export interface searchItem {
+export interface SearchItem {
   title: string;
   subTitle: string;
   selected: boolean;
 }
+// job tab
+export interface jobItem extends SearchItem {}
+
 export interface State {
   tabData: Item[];
-  searchData: searchItem[];
+  searchData: SearchItem[];
+  jobTabData: jobItem[];
 }
 export interface Action {
   changeSearchData: (idx: number) => void;
+  changeJobData: (idx: number) => void;
 }
 
 const useHeaderStore = create<State & Action>((set) => ({
@@ -76,6 +81,23 @@ const useHeaderStore = create<State & Action>((set) => ({
       selected: false,
     },
   ],
+  jobTabData: [
+    {
+      title: "Best Matches",
+      subTitle: "apply to jobs11111",
+      selected: true,
+    },
+    {
+      title: "Most recent",
+      subTitle: "apply to jobs22222",
+      selected: false,
+    },
+    {
+      title: "Saved Jobs",
+      subTitle: "apply to jobs33333",
+      selected: false,
+    },
+  ],
   changeSearchData: (idx) => {
     set((state) => {
       state.searchData.forEach((item, index) => {
@@ -86,6 +108,18 @@ const useHeaderStore = create<State & Action>((set) => ({
         }
       });
       return { searchData: state.searchData };
+    });
+  },
+  changeJobData: (idx) => {
+    set((state) => {
+      state.jobTabData.forEach((item, index) => {
+        if (idx === index) {
+          item.selected = true;
+        } else {
+          item.selected = false;
+        }
+      });
+      return { jobTabData: state.jobTabData };
     });
   },
 }));

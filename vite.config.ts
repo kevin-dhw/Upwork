@@ -5,6 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   // 配置scss
+  resolve: {
+    alias: {
+      '@': '/src', // 设置 '@' 别名指向项目根目录下的 src 文件夹
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {

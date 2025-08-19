@@ -7,6 +7,9 @@ import Availability, { AvailabilityRef } from "./components/availability";
 import Boost, { BoostRef } from "./components/boost";
 import SomeFunctiolnal from "./components/someFuctional";
 import Other from "./components/other";
+import Tab from "./components/tab";
+import TabMatchList from "./components/tabMatchList";
+import FooterContent from "./components/footerContent";
 
 const Test: React.FC = () => {
   const searchRef = useRef<SearchRef>(null);
@@ -28,6 +31,12 @@ const Test: React.FC = () => {
           </div>
           <div className=" pt-[20px] font-bold text-[20px]">
             Jobs you might like
+          </div>
+          <div className=" mt-[20px]">
+            <Tab></Tab>
+          </div>
+          <div>
+            <TabMatchList></TabMatchList>
           </div>
         </div>
         <div className=" w-[300px] ">
@@ -94,6 +103,8 @@ const Test: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* footer content */}
+      <FooterContent />
       {/* Availability badge content */}
       <Availability ref={availabilityRef}></Availability>
       {/* boost your profile content */}

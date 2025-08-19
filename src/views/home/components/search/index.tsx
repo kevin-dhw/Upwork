@@ -75,7 +75,7 @@ const InnerSearch: ForwardRefRenderFunction<SearchRef, SearchProps> = (
         </div>
       </div>
       {blurShow && (
-        <div className=" border rounded-md mt-[3px] py-[5px] absolute top-[40px] w-[100%] bg-white">
+        <div className=" z-50 border rounded-md mt-[3px] py-[5px] absolute top-[40px] w-[100%] bg-white">
           {searchList.map((item, idx) => {
             return (
               <div
