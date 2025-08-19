@@ -3,10 +3,11 @@ import classNames from "classnames";
 
 export interface CloseCompProps extends PropsWithChildren {
   title?: string;
+  border?: boolean;
 }
 
 const CloseComp: React.FC<CloseCompProps> = (props) => {
-  const { children, title = " fake title" } = props;
+  const { children, title = " fake title", border = true } = props;
   const childrenRef = useRef<HTMLDivElement>(null);
   const [showContent, setShowContent] = useState(false);
   const [height, setHeight] = useState<number>(0);
@@ -18,8 +19,13 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
   }, []);
 
   return (
-    <div>
-      <div className=" p-[20px] bg-[#f9f9f9] rounded-md">
+    <div className=" px-[20px]">
+      <div
+        className={classNames(
+          " py-[20px] bg-[#f9f9f9] ",
+          border ? " border-b" : ""
+        )}
+      >
         <div className=" flex">
           <div className=" flex-1 font-bold text-[18px]">{title}</div>
           <div
@@ -36,10 +42,13 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
             height: showContent ? `${height}px` : "0px",
           }}
           className={classNames(
-            " transition-all ease-in-out duration-700 delay-100 overflow-hidden"
+            " transition-all ease-in-out duration-700 delay-100 overflow-hidden",
+            ""
           )}
         >
-          <div ref={childrenRef}> {children}</div>
+          <div ref={childrenRef} className=" pt-[10px]">
+            {children}
+          </div>
         </div>
       </div>
     </div>

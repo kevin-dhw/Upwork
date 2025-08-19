@@ -19,7 +19,7 @@ const CloseComp: React.FC<CloseCompProps> = (props) => {
 
   return (
     <div>
-      <div className=" p-[20px] bg-[#f9f9f9] rounded-md">
+      <div className=" px-[20px] py-[20px] bg-[#f9f9f9] rounded-md border-b">
         <div className=" flex">
           <div className=" flex-1 font-bold text-[18px]">{title}</div>
           <div
