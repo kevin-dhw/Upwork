@@ -6,6 +6,7 @@ import CloseComp from "../../components/closeComp";
 import Availability, { AvailabilityRef } from "./components/availability";
 import Boost, { BoostRef } from "./components/boost";
 import SomeFunctiolnal from "./components/someFuctional";
+import Other from "./components/other";
 
 const Test: React.FC = () => {
   const searchRef = useRef<SearchRef>(null);
@@ -87,6 +88,9 @@ const Test: React.FC = () => {
           </div>
           <div>
             <SomeFunctiolnal></SomeFunctiolnal>
+          </div>
+          <div className=" mt-[20px]">
+            <Other></Other>
           </div>
         </div>
       </div>
