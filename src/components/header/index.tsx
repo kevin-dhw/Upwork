@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             <div>{searchData.find((item) => item.selected)?.title}</div>
             {showType && (
               <div className=" absolute top-[40px] left-0 z-[1000] bg-white shadow-[1px_1px_10px_1px_#f1f1f1] overflow-hidden">
-                <div className=" py-[10px] border w-[220px] rounded-md ">
+                <div className=" py-[10px] border w-[220px] rounded-md cursor-pointer">
                   {searchData.map((item, idx) => {
                     return (
                       <div
