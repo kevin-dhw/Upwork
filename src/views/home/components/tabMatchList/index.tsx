@@ -1,13 +1,19 @@
 import React from "react";
+import Edit from "./Edit";
+import PreView from "./preView";
 
 const TabMatchList: React.FC = () => {
+  const [state, setState] = React.useState<"edit" | "view">("view");
   return (
     <div className=" ">
-      <div>tabMatchList</div>
-      <div className=" w-[100%] h-[400px] border"></div>
-      <div className=" w-[100%] h-[400px] border"></div>
-      <div className=" w-[100%] h-[400px] border"></div>
-      <div className=" w-[100%] h-[400px] border"></div>
+      <div
+        onClick={() => {
+          setState(state === "edit" ? "view" : "edit");
+        }}
+      >
+        profile
+      </div>
+      {state === "view" ? <PreView /> : <Edit />}
     </div>
   );
 };
